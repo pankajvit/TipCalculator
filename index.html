@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+</head>
+<body>
+    <div id="msg"></div>
+    <input type="number" id="money" value=""/>
+    <button id="btn">Tip</button>
+    <script>
+        let msg=document.getElementById('msg');
+        let btn=document.getElementById('btn');
+
+        btn.addEventListener("click",calculate);
+        function calculate(){
+            let Cost=document.querySelector("input");
+            Cost=Cost.value;
+            let tipCost=(Cost * 15/100).toFixed(2);
+            msg.innerHTML=`<h1>You should tip ${tipCost} Rs. on ${Cost} Rs.</h1>`;
+        }
+    </script>
+</body>
+</html>
